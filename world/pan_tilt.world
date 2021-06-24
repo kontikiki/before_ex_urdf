@@ -1,8 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <!-- We use a custom world for the rrbot so that the camera angle is launched correctly -->
-
-  <world name="default">
+<world name="pan_tilt">
     <include>
       <uri>model://ground_plane</uri>
     </include>
@@ -10,6 +8,14 @@
     <!-- Global light source -->
     <include>
       <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://cafe</uri>
+    </include>
+
+    <include>
+    <uri>model://coke_can</uri>
     </include>
 
     <!-- Focus camera on tall pendulum -->
@@ -21,4 +27,4 @@
     </gui>
 
   </world>
-</sdf>
+  </sdf>
