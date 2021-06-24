@@ -1,5 +1,5 @@
 # ex_urdf
-pan-tilt_ex
+pan-tilt stick
 
 #spawn command
 
