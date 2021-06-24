@@ -23,14 +23,14 @@
             <geometry>
                 <cylinder radius="${base_link_radius}" length="${base_link_length}"/>
             </geometry>
-            <origin xyz="0.0 0.0 0.015" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0.0 0.0 0.30" rpy="0.0 0.0 0.0"/>
         </visual>
 
         <collision>
             <geometry>
                 <cylinder radius="${base_link_radius}" length="${base_link_length}"/>
             </geometry>
-            <origin xyz="0.0 0.0 0.015" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0.0 0.0 0.30" rpy="0.0 0.0 0.0"/>
         </collision>
 
         <inertial>
@@ -42,10 +42,10 @@
     <joint name="pan_joint" type="revolute">
         <parent link="base_link"/>
         <child link="pan_link"/>
-        <origin xyz="0.0 0.0 0.015"/>
+        <origin xyz="0.0 0.0 0.315"/>
         <axis xyz="0.0 0.0 1.0"/>
      --  <limit lower="-1000000" upper="1000000" effort="300" velocity="0.1"/>
-        <dynamics damping="1" friction="1"/>
+        <dynamics damping="50" friction="1"/>
     </joint>
 
 
@@ -78,8 +78,8 @@
         <child link="tilt_link"/>
         <origin xyz="0.0 0.09 1.5"/>
         <axis xyz="0.0 1.0 0.0"/>
-       <limit lower="-2.0" upper="2.0" effort="300.0" velocity="0.5"/>
-        <dynamics damping="1" friction="1"/>
+       <limit lower="-1000000" upper="1000000" effort="300.0" velocity="0.5"/>
+        <dynamics damping="50" friction="1"/>
     </joint>
 
 
@@ -279,7 +279,7 @@
         <camera name="camera">
           <horizontal_fov>1.487020523</horizontal_fov>
           <image>
-            <width>680</width>
+            <width>640</width>
             <height>480</height>
           </image>
           <clip>
@@ -294,7 +294,7 @@
         </camera>
         <always_on>1</always_on>
         <update_rate>90</update_rate>
-        <visualize>0</visualize>
+        <visualize>1</visualize>
       </sensor>
     </gazebo>
     <gazebo>
@@ -322,6 +322,7 @@
         <pointCloudCutoff>0.25</pointCloudCutoff>
         <pointCloudCutoffMax>9.0</pointCloudCutoffMax>
       </plugin>
-      <plugin name="my_robot" filename="libmyrobot_plugin.so"/>
-    </gazebo>
+     <plugin name="my_pantilt" filename="libmypantilt_plugin.so"/>
+     <plugin name="my_robot" filename="libmyrobot_plugin.so"/>
+</gazebo>
 </robot>
