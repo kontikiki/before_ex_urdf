@@ -16,6 +16,7 @@
     <joint name="world_joint" type="fixed">
         <parent link="world"/>
         <child link="base_link"/>
+        <static>0</static>
     </joint>
 
     <link name="base_link">
@@ -30,7 +31,7 @@
             <geometry>
                 <cylinder radius="${base_link_radius}" length="${base_link_length}"/>
             </geometry>
-            <origin xyz="0.0 0.0 0.30" rpy="0.0 0.0 0.0"/>
+           <origin xyz="0.0 0.0 0.30" rpy="0.0 0.0 0.0"/>
         </collision>
 
         <inertial>
@@ -209,6 +210,17 @@
     <link name="camera_color_optical_frame"/>
 
     <gazebo reference="camera_link">
+     <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+      <!--<mu>1</mu>-->
+      <mu2>1</mu2>
+      <fdir1>0 0 0</fdir1>
+      <!--<slip1>0</slip1>
+      <slip2>0</slip2>-->
+      <kp>1e+13</kp>
+      <kd>1</kd>
       <sensor name="cameracolor" type="camera">
         <camera name="camera">
           <horizontal_fov>1.211258501</horizontal_fov>
