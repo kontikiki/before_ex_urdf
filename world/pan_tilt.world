@@ -1,13 +1,25 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
 <world name="pan_tilt">
+    
     <include>
-      <uri>model://ground_plane</uri>
+      <geometry>
+            <uri>model://ground_plane</uri>
+      </geometry>
     </include>
 
     <!-- Global light source -->
     <include>
-      <uri>model://sun</uri>
+      <geometry>
+        <uri>model://sun</uri>
+      </geometry>
+    </include>
+
+
+   <include>
+      <geometry>
+          <uri>model://coke_can</uri>
+      </geometry>
     </include>
 
     <!-- Focus camera on tall pendulum -->

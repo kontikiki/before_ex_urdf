@@ -411,15 +411,6 @@
         </axis>
       </joint>
       <static>0</static>
-      <plugin name='gazebo_api' filename='libgazebo_ros_api_plugin.so'>
-        <robotNamespace>/</robotNamespace>
-      </plugin>
-      <plugin name='my_pantilt' filename='libmypantilt_plugin.so'>
-        <robotNamespace>/</robotNamespace>
-      </plugin>
-      <plugin name='my_robot' filename='libmyrobot_plugin.so'>
-        <robotNamespace>/</robotNamespace>
-      </plugin>
       <plugin name='camera' filename='librealsense_gazebo_plugin.so'>
         <prefix>camera</prefix>
         <depthUpdateRate>30.0</depthUpdateRate>
@@ -445,15 +436,22 @@
         <pointCloudCutoffMax>9.0</pointCloudCutoffMax>
         <robotNamespace>/</robotNamespace>
       </plugin>
+      <plugin name='my_pantilt' filename='libmypantilt_plugin.so'>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <plugin name='my_robot' filename='libmyrobot_plugin.so'>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
       <pose frame=''>0 0 0 0 -0 0</pose>
     </model>
-    <model name='playground'>
+    <model name='House 1'>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://playground/meshes/playground.dae</uri>
+              <uri>model://house_1/meshes/house_1.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -473,21 +471,42 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://playground/meshes/playground.dae</uri>
+              <uri>model://house_1/meshes/house_1.dae</uri>
+              <scale>1.5 1.5 1.5</scale>
             </mesh>
           </geometry>
+          <material>
+            <script>
+              <uri>model://house_1/materials/scripts</uri>
+              <uri>model://house_1/materials/textures</uri>
+              <name>House_1/Diffuse</name>
+            </script>
+            <shader type='normal_map_tangent_space'>
+              <normal_map>House_1_Normal.png</normal_map>
+            </shader>
+          </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>-0.413778 1.28348 0 0 -0 0</pose>
+      <pose frame=''>2.4434 6.79132 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>91 39000000</sim_time>
-      <real_time>91 870739266</real_time>
-      <wall_time>1625023733 73544092</wall_time>
-      <iterations>91039</iterations>
+      <sim_time>111 430000000</sim_time>
+      <real_time>112 140486925</real_time>
+      <wall_time>1625018137 52148584</wall_time>
+      <iterations>111430</iterations>
+      <model name='House 1'>
+        <pose frame=''>2.4434 6.79132 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.4434 6.79132 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='ground_plane'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -503,31 +522,21 @@
         <scale>1 1 1</scale>
         <link name='base_link'>
           <pose frame=''>-0 -0 0 0 -0 0</pose>
-          <velocity>-0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-        <link name='pan_link'>
-          <pose frame=''>-0 -0 0.315 0 -0 0</pose>
-          <velocity>-0 0 -0 0 -0 0</velocity>
-          <acceleration>0 0 -0 0 -0 0</acceleration>
-          <wrench>0 0 -0 0 -0 0</wrench>
-        </link>
-        <link name='tilt_link'>
-          <pose frame=''>0 0.09 1.815 0 4e-06 0</pose>
-          <velocity>0 -0 -0 0 -0 0</velocity>
+          <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 -0 -0 0 -0 0</acceleration>
           <wrench>0 -0 -0 0 -0 0</wrench>
         </link>
-      </model>
-      <model name='playground'>
-        <pose frame=''>-0.413778 1.28348 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-0.413778 1.28348 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+        <link name='pan_link'>
+          <pose frame=''>-0 -0 0.315 0 0 -7e-06</pose>
+          <velocity>0 0 -0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 -0 -0 -0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='tilt_link'>
+          <pose frame=''>1e-06 0.09 1.815 -3.14159 1.20773 3.14159</pose>
+          <velocity>0 -0 -0 0 0.002244 0</velocity>
+          <acceleration>0 -0 1e-06 0.001099 3e-05 -0.004388</acceleration>
+          <wrench>1e-06 -0 3e-06 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -536,7 +545,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>6.1386 -6.81016 3.38896 0 0.275643 2.35619</pose>
+        <pose frame=''>8.11693 -9.1702 3.66333 0 0.275643 2.35619</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
