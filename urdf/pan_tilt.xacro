@@ -17,14 +17,14 @@
         <parent link="world"/>
         <child link="base_link"/>
         <static>0</static>
-    </joint>
+    </joint> 
 
     <link name="base_link">
         <visual>
             <geometry>
                 <cylinder radius="${base_link_radius}" length="${base_link_length}"/>
             </geometry>
-            <origin xyz="0.0 0.0 0.30" rpy="0.0 0.0 0.0"/>
+          <origin xyz="0.0 0.0 0.30" rpy="0.0 0.0 0.0"/>
         </visual>
 
         <collision>
@@ -45,7 +45,7 @@
         <child link="pan_link"/>
         <origin xyz="0.0 0.0 0.315"/>
         <axis xyz="0.0 0.0 1.0"/>
-     --  <limit lower="-1000000" upper="1000000" effort="300" velocity="0.1"/>
+       <limit lower="-1000000" upper="1000000" effort="300" velocity="0.1"/>
         <dynamics damping="50" friction="1"/>
     </joint>
 
@@ -108,7 +108,7 @@
     </link>
 
     <joint name="camera_joint" type="fixed">
-      <origin xyz="0.0 0.04 0.22" rpy="3.141592 -1.5707 0.0"/>
+      <origin xyz="0.0 0.0 0.22" rpy="0 -1.5707 0.0"/>
       <parent link="tilt_link"/>
       <child link="camera_bottom_screw_frame" />
     </joint>
@@ -311,8 +311,8 @@
     </gazebo>
     <gazebo>
     <plugin name="gazebo_api" filename="libgazebo_ros_api_plugin.so"/>
-    <plugin name="my_pantilt" filename="libmypantilt_plugin.so"/>
-     <plugin name="my_robot" filename="libmyrobot_plugin.so"/>
+    <plugin name="my_pantilt2" filename="libmypantilt2_plugin.so"/>
+    <plugin name="my_pantilt1" filename="libmypantilt1_plugin.so"/>
     <plugin name="camera" filename="librealsense_gazebo_plugin.so">
         <prefix>camera</prefix>
         <depthUpdateRate>30.0</depthUpdateRate>

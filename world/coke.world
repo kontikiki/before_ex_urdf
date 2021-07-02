@@ -1,5 +1,5 @@
-<robot name='pan_tilt'>
-  <world name='can'>
+<sdf version='1.6'>
+  <world name='cola'>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose frame=''>0 0 10 0 -0 0</pose>
@@ -140,18 +140,18 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>1.32992 -1.34434 0 0 -0 0</pose>
+      <pose frame=''>0.51112 -0.716283 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>50 997000000</sim_time>
-      <real_time>51 205879284</real_time>
-      <wall_time>1624869556 933015500</wall_time>
-      <iterations>50997</iterations>
+      <sim_time>74 819000000</sim_time>
+      <real_time>75 242142047</real_time>
+      <wall_time>1624518143 150411387</wall_time>
+      <iterations>74819</iterations>
       <model name='coke_can'>
-        <pose frame=''>1.3299 -1.34448 -0.002659 -0.055112 0.007741 -0.000483</pose>
+        <pose frame=''>0.5111 -0.716421 -0.002659 -0.055112 0.007741 -0.000483</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>1.3299 -1.34448 -0.002659 -0.055112 0.007741 -0.000483</pose>
+          <pose frame=''>0.5111 -0.716421 -0.002659 -0.055112 0.007741 -0.000483</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0.040402 0.022034 0.002042 -0.382614 0.708503 0.07172</acceleration>
           <wrench>0.015757 0.008593 0.000796 0 -0 0</wrench>
@@ -173,10 +173,10 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>5 -5 2 0 0.275643 2.35619</pose>
+        <pose frame=''>2.12247 -2.44682 0.658957 0 0.275643 2.35619</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
-      </camera>-->
+      </camera>
     </gui>
   </world>
-</robot>
+</sdf>

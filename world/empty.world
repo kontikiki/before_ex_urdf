@@ -101,12 +101,12 @@
         <pose frame=''>0 0 10 0 -0 0</pose>
       </light>
     </state>
-    <!--<gui fullscreen='0'>
+    <gui fullscreen='0'>
       <camera name='user_camera'>
         <pose frame=''>5 -5 2 0 0.275643 2.35619</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
-    </gui>-->
+    </gui>
   </world>
 </sdf>

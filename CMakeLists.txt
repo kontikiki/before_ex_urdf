@@ -50,11 +50,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-   FILES
-   pantilt.msg
+#add_message_files(
+#   FILES
+#   pantilt.msg
 #   Message2.msg
- )
+#)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -73,7 +73,7 @@ add_message_files(
 ## Generate added messages and services with any dependencies listed here
  generate_messages(
    DEPENDENCIES
-   std_msgs
+   geometry_msgs
  )
 
 ################################################
@@ -108,7 +108,7 @@ add_message_files(
 catkin_package(
 #  INCLUDE_DIRS include
   LIBRARIES ex_urdf
-  CATKIN_DEPENDS std_msgs roscpp rviz tf urdf xacro
+  CATKIN_DEPENDS geometry_msgs roscpp rviz tf urdf xacro
 #  DEPENDS system_lib
 )
 
@@ -136,7 +136,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
- add_executable(topic_pub src/topic_pub.cpp)
+add_executable(topic_pub src/topic_pub.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -153,6 +153,14 @@ add_dependencies(topic_pub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED
    ${catkin_LIBRARIES}
  )
 
+
+# add_executable(topic_sub src/topic_sub.cpp)
+
+#add_dependencies(topic_sub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+# target_link_libraries(topic_sub
+#   ${catkin_LIBRARIES}
+#   )
 #############
 ## Install ##
 #############
