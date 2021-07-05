@@ -68,6 +68,6 @@ source /usr/share/gazebo/setup.sh
    
    $gazebo test_table_d435.world  (or any other world that you making)
    
-   notice!! cofirm the roscore is alive or not. if there is no roscore, execute first. 
+   notice!! cofirm the roscore is alive or not before executing this pan-tilt model. if there is no roscore, execute first. 
    
    $roscore
