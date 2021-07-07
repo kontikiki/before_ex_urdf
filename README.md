@@ -54,11 +54,11 @@ source /usr/share/gazebo/setup.sh
 12. If you wanna make moving the rods, you can execute in command line.
     for examples,if you type & execute that command below, the tilt-rod(attached camera) rotate 1.5707 radian (90 degree)
    
-   $rosrun ex_urdf ang 0 0 1.5707
+   $rosrun ex_urdf topic_pub ang 0 0 1.5707
     
    and if you type & execute the command below, the pan-rod rotate continuousely with constant velocity("100").
    
-   $rosrun ex_urdf vel 0 100 0
+   $rosrun ex_urdf topic_pub vel 0 100 0
    
    That commands are published every 1 second. 
     
