@@ -5,7 +5,7 @@ how to use pan-tilt model in gazebo
 
 2. Install ROS1 ( melodic )
 
-3. and install any other dependencies for using gazebo & ROS (ex> gazebo_ros_pkgs)
+3. and install any other dependencies for using gazebo & ROS (gazebo_ros_pkgs,realsense2_description,realsense_gazebo_plugin )
 
 4. putting the line in .bashrc file
 
